@@ -1,3 +1,10 @@
 body {
     background-color: antiquewhite;
 }
+div {
+    padding: 2.5%;
+    background-color: rgb(126, 126, 255);
+}
+.navbar-brand {
+    background-color: rgb(255, 69, 48);
+}
