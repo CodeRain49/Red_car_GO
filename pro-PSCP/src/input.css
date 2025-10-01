@@ -1,0 +1,15 @@
+@import "tailwindcss";
+nav {
+    background-color: #536493;
+}
+h1 {
+    color: white;
+}
+h2 {
+    color: white;
+    font-size: 20px;
+}
+.sep {
+    background-color: #f25e7a;
+    padding: 5px;
+}
