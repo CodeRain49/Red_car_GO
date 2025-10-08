@@ -226,6 +226,9 @@ h2 {
   background-color: #FF1737;
   padding: 5px;
 }
+body {
+  font-family: 'system-ui', 'Segoe UI', 'Helvetica', 'sans-serif', 'Arial';
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
