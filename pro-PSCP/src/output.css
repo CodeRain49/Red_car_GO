@@ -213,7 +213,7 @@
   }
 }
 nav {
-  background-color: #536493;
+  background-color: #1E3167;
 }
 h1 {
   color: white;
@@ -223,7 +223,7 @@ h2 {
   font-size: 20px;
 }
 .sep {
-  background-color: #f25e7a;
+  background-color: #FF1737;
   padding: 5px;
 }
 @property --tw-font-weight {
