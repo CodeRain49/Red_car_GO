@@ -18,3 +18,7 @@ h2 {
 body {
     font-family: 'system-ui', 'Segoe UI', 'Helvetica', 'sans-serif', 'Arial';
 }
+.logo{
+    width: 30px;
+    height: 30px;
+}

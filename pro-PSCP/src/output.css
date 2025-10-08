@@ -91,7 +91,7 @@
     list-style: none;
   }
   img, svg, video, canvas, audio, iframe, embed, object {
-    display: inline-block;
+    display: block;
     vertical-align: middle;
   }
   img, video {
@@ -182,6 +182,9 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
   .ml-3 {
     margin-left: calc(var(--spacing) * 3);
   }
@@ -199,6 +202,9 @@
   }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
@@ -228,6 +234,10 @@ h2 {
 }
 body {
   font-family: 'system-ui', 'Segoe UI', 'Helvetica', 'sans-serif', 'Arial';
+}
+.logo {
+  width: 30px;
+  height: 30px;
 }
 @property --tw-font-weight {
   syntax: "*";
