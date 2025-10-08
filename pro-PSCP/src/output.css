@@ -311,3 +311,19 @@ body {
     }
   }
 }
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+้h1{
+    color: #333;
+    margin-bottom: 60px;
+}
+iframe{
+    width: 80%;
+    height: 500px;
+}
