@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>จุดจอดรถสาย <%= routeInfo.route_number %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('https://i.pinimg.com/736x/9c/04/11/9c04111ba071591f81a455f8e897c5df.jpg')
+        no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Prompt', sans-serif;
+      color: #111; /* ตัวอักษรสีดำ */
+    }
+
+    select, input, button {
+      color: #111 !important;
+    }
+
+    /* overlay ทำให้ตัวอักษรอ่านง่าย */
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen">
+
+  <div class="overlay flex flex-col items-center">
+    <h1 class="text-3xl font-bold mb-6">📍MAP</MAP> <%= routeInfo.route_number %></h1>
+
+    <!-- กล่องแผนที่ -->
+    <div class="w-[600px] h-[400px] shadow-lg rounded-2xl overflow-hidden">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.733546644606!2d100.52318631538565!3d13.736717501185529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ed3f74f32f5%3A0x1e3df7b6b0e2e46b!2sBangkok!5e0!3m2!1sth!2sth!4v1691234567890"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    </button>
+    <button class="mt-8 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+    คลิกเพื่อแชร์ตำแหน่ง
+    </span>
+    </button>
+        <div class="text-center mt-2">
+      <a href="/" class="bg-gradient-to-r from-pink-400 to-red-500 px-5 py-2 rounded-lg font-semibold text-white hover:opacity-90"> ⬅ </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

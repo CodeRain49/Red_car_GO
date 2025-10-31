@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ค้นหารถแดงเชียงใหม่</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: url('https://i.pinimg.com/736x/9c/04/11/9c04111ba071591f81a455f8e897c5df.jpg')
+        no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Prompt', sans-serif;
+      color: #111; /* ตัวอักษรสีดำ */
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    select, input, button {
+      color: #111 !important;
+    }
+
+    option {
+      color: #111 !important;
+    }
+
+    /* ปรับ scroll dropdown ให้สวย */
+    select {
+      max-height: 180px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen text-black">
+  <div class="glass rounded-2xl p-8 shadow-2xl max-w-md w-full mx-4">
+    <h1 class="text-3xl font-bold text-center mb-6">Red Car Go</h1>
+
+    <!-- ฟอร์มค้นหา -->
+    <form action="/search" method="POST" class="space-y-4">
+      <!-- ต้นทาง -->
+      <div>
+        <label class="block text-sm font-medium mb-1">ต้นทาง</label>
+        <select
+          id="start_point"
+          name="start_point"
+          required
+          class="w-full rounded-lg px-3 py-2 border border-gray-300 focus:ring-2 focus:ring-red-400"
+        >
+          <option value="">-- เลือกต้นทาง --</option>
+          <% points.forEach(p => { %>
+            <option value="<%= p %>"><%= p %></option>
+          <% }); %>
+        </select>
+      </div>
+
+      <!-- ปลายทาง -->
+      <div>
+        <label class="block text-sm font-medium mb-1">ปลายทาง</label>
+        <select
+          id="end_point"
+          name="end_point"
+          required
+          class="w-full rounded-lg px-3 py-2 border border-gray-300 focus:ring-2 focus:ring-red-400"
+        >
+          <option value="">-- เลือกปลายทาง --</option>
+          <% points.forEach(p => { %>
+            <option value="<%= p %>"><%= p %></option>
+          <% }); %>
+        </select>
+      </div>
+
+      <!-- ปุ่มค้นหา -->
+      <button
+        type="submit"
+        class="w-full bg-gradient-to-r from-pink-400 to-red-500 py-2 rounded-lg font-bold text-white hover:opacity-90"
+      >
+        🔍 ค้นหาเส้นทาง
+      </button>
+
+      <!-- ปุ่มดูเส้นทางทั้งหมด -->
+      <a
+        href="/routes"
+        class="block text-center bg-gradient-to-r from-sky-400 to-blue-500 py-2 rounded-lg font-bold mt-2 text-white hover:opacity-90"
+      >
+        📋 ดูเส้นทางทั้งหมด
+      </a>
+    </form>
+
+    <!-- แสดงผลการค้นหา -->
+    <% if (results && results.length > 0) { %>
+      <div class="mt-6">
+        <h2 class="text-xl font-semibold mb-2 text-center">ผลการค้นหา</h2>
+        <% results.forEach(r => { %>
+          <a href="/map">
+          <div
+            class="bg-white text-black rounded-lg p-3 mb-2 border border-gray-200 shadow-sm hover:scale-105 transition"
+          >
+            <p><strong>สาย:</strong> <%= r.route_number %> (<%= r.bus_number %>)</p>
+            <p><strong>เส้นทาง:</strong> <%= r.route_name %></p>
+          </div>
+          </a>
+        <% }); %>
+      </div>
+    <% } else if (results) { %>
+      <div class="mt-4 bg-red-500 bg-opacity-80 rounded-lg p-3 text-center text-white">
+         ไม่พบข้อมูลเส้นทางที่ค้นหา
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>
