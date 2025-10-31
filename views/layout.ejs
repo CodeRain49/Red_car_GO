@@ -97,12 +97,14 @@
       <div class="mt-6">
         <h2 class="text-xl font-semibold mb-2 text-center">ผลการค้นหา</h2>
         <% results.forEach(r => { %>
+          <a href="map.ejs">
           <div
             class="bg-white text-black rounded-lg p-3 mb-2 border border-gray-200 shadow-sm hover:scale-105 transition"
           >
             <p><strong>สาย:</strong> <%= r.route_number %> (<%= r.bus_number %>)</p>
             <p><strong>เส้นทาง:</strong> <%= r.route_name %></p>
           </div>
+          </a>
         <% }); %>
       </div>
     <% } else if (results) { %>
