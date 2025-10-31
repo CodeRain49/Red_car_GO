@@ -63,6 +63,11 @@ app.post('/search', (req, res) => {
   });
 });
 
+// // ไปหน้า google map
+app.get('/map', (req, res) => {
+  res.render('map', { stops: [], routeInfo: {} });
+});
+
 // ดูเส้นทางทั้งหมด
 app.get('/routes', (req, res) => {
   db.all(`SELECT * FROM route`, [], (err, routes) => {
