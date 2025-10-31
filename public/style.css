@@ -1,0 +1,7 @@
+/* public/style.css */
+body {
+  font-family: "Prompt", sans-serif;
+}
+button:hover {
+  transform: scale(1.02);
+}

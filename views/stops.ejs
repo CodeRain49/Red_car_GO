@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>จุดจอดรถสาย <%= routeInfo.route_number %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+      background: url('https://i.pinimg.com/736x/9c/04/11/9c04111ba071591f81a455f8e897c5df.jpg')
+        no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Prompt', sans-serif;
+      color: #111; /* ตัวอักษรสีดำ */
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    select, input, button {
+      color: #111 !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-black">
+  <div class="bg-white/80 rounded-2xl p-8 shadow-2xl max-w-md w-full mx-4">
+    <h1 class="text-2xl font-bold text-center mb-4">🚏 จุดจอดรถสาย <%= routeInfo.route_number %></h1>
+    <p class="text-center mb-4 opacity-90">เส้นทาง: <%= routeInfo.route_name %></p>
+
+    <ol class="list-decimal list-inside space-y-1">
+      <% stops.forEach(s => { %>
+        <li class="bg-gray-100 rounded-lg px-3 py-2 border border-gray-300"><%= s.stop_name %></li>
+      <% }); %>
+    </ol>
+
+    <div class="text-center mt-6">
+      <a href="/routes" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg font-semibold text-white">⬅ กลับ</a>
+    </div>
+  </div>
+</body>
+</html>
