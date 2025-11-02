@@ -5,27 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>จุดจอดรถสาย <%= routeInfo.route_number %></title>
   <script src="https://cdn.tailwindcss.com"></script>
-<<<<<<< HEAD
-<style>
-=======
   <style>
->>>>>>> 08f6e802cc704565ea9f97df9a6c8a11cd6d1311
     body {
       background: url('https://i.pinimg.com/736x/9c/04/11/9c04111ba071591f81a455f8e897c5df.jpg')
         no-repeat center center fixed;
       background-size: cover;
       font-family: 'Prompt', sans-serif;
-      color: #111; /* ตัวอักษรสีดำ */
+      color: #111;
     }
 
-<<<<<<< HEAD
-
-    select, input, button {
-      color: #111 !important;
-    }
-  </style>
-</head>
-=======
     select, input, button {
       color: #111 !important;
     }
@@ -41,7 +29,7 @@
 <body class="flex flex-col items-center justify-center min-h-screen">
 
   <div class="overlay flex flex-col items-center">
-    <h1 class="text-3xl font-bold mb-6">📍MAP</MAP> <%= routeInfo.route_number %></h1>
+    <h1 class="text-3xl font-bold mb-6">📍MAP สาย <%= routeInfo.route_number %></h1>
 
     <!-- กล่องแผนที่ -->
     <div class="w-[600px] h-[400px] shadow-lg rounded-2xl overflow-hidden">
@@ -55,18 +43,19 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-    </button>
+
+    <!-- ปุ่มแชร์ -->
     <button class="mt-8 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-    คลิกเพื่อแชร์ตำแหน่ง
-    </span>
+      <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+        📤 คลิกเพื่อแชร์ตำแหน่ง
+      </span>
     </button>
+
+    <!-- ปุ่มกลับ -->
     <div class="text-center mt-2">
       <a href="/" class="bg-gradient-to-r from-pink-400 to-red-500 px-5 py-2 rounded-lg font-semibold text-white hover:opacity-90"> ⬅ </a>
     </div>
-
   </div>
 
 </body>
 </html>
->>>>>>> 08f6e802cc704565ea9f97df9a6c8a11cd6d1311
