@@ -32,7 +32,16 @@
 
     <ol class="list-decimal list-inside space-y-1">
       <% stops.forEach(s => { %>
-        <li class="bg-gray-100 rounded-lg px-3 py-2 border border-gray-300"><%= s.stop_name %></li>
+        <li>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=<%= encodeURIComponent(s.stop_name) %>&travelmode=driving"
+            target="_blank"
+            rel="noopener"
+            class="block bg-gray-100 rounded-lg px-3 py-2 border border-gray-300 transition transform hover:scale-105 hover:bg-gray-200 no-underline"
+          >
+            <%= s.stop_name %>
+          </a>
+        </li>
       <% }); %>
     </ol>
 
